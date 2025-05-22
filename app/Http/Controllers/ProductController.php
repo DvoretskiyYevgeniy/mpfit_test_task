@@ -52,7 +52,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::findOrfail($id);
+        $product = Product::withTrashed()->findOrfail($id);
         return view('product.show', compact('product'));
     }
 
