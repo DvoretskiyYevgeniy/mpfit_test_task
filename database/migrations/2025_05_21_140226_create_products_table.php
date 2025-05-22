@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->decimal('price', 10, 2);
+            $table->softDeletes();
 
             $table->unsignedBigInteger('category_id');
             $table->index('category_id', 'products_categories_idx');
